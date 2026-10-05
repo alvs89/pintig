@@ -1,0 +1,33 @@
+{
+  "purpose": "PINTIG prototype survival-model development using the modified Framingham teaching dataset",
+  "endpoint": "MI_FCHD administratively censored at 10 years",
+  "horizon_days": 3652.5,
+  "participants": 4240,
+  "events_10y": 191,
+  "validation": "5-fold nested cross-validation; preprocessing fitted inside folds",
+  "predictors": [
+    "age_years",
+    "sbp_mmhg",
+    "dbp_mmhg",
+    "bmi_kg_m2",
+    "cigarettes_per_day",
+    "heart_rate_bpm",
+    "sex_male",
+    "current_smoker",
+    "bp_medication",
+    "prior_stroke",
+    "education_code"
+  ],
+  "final_xgb_config_number": 6,
+  "final_xgb_config": {
+    "max_depth": 1,
+    "eta": 0.03,
+    "min_child_weight": 10,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0,
+    "lambda": 10,
+    "alpha": 0,
+    "nround": 400
+  },
+  "important_limitation": "Teaching dataset only; not final clinical or Philippine validation evidence."
+}
